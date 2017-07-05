@@ -1,0 +1,22 @@
+
+<div id="upload">
+  <h1>Select any file</h1>
+
+             {{#if success_msg}}
+               <div class="alert alert-success">{{success_msg}}</div>
+             {{/if}}
+
+             {{#if error_msg}}
+               <div class="alert alert-danger">{{error_msg}}</div>
+             {{/if}}
+
+             {{#if error}}
+               <div class="alert alert-danger">{{error}}</div>
+             {{/if}}
+
+<form  id="userForm"  enctype ="multipart/form-data" action="/upload" method = "post">
+                    <input type="file" name="upload_file" /><br>
+<button id="submit" name="submit" class="btn btn-primary">SUBMIT</button>
+</form>
+
+</div>

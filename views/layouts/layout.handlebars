@@ -1,0 +1,54 @@
+<!Doctype html>
+<html lang="en">
+   <head>
+
+     <!-- Latest compiled and minified CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+
+   <!-- Optional theme -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+   <link href="/assets/sty.css" rel='stylesheet' type='text/css'>
+
+   <link href='https://fonts.googleapis.com/css?family=Yesteryear' rel='stylesheet' type='text/css'>
+<script>
+
+$(document).ready(function(){
+  $(".download").click(function(e){
+   var filedata=this.id;
+  $('<form action="/download" method="POST">' +
+    '<input type="hidden" name="file" value="' + filedata+ '">' +
+    '</form>').submit();
+
+    });
+});
+</script>
+
+
+
+ </head>
+
+
+{{{body}}}
+<ul id="upload">
+  <br>
+<h1>Uploaded file</h1>
+<table class="table  table-striped table-hover" id="table">
+{{#each result}}
+<br>
+<tr>
+ <td>{{this}}</td>
+   <td><a class="btn btn-primary" value="download">Download</a></td>
+</tr>
+  {{/each}}
+</table>
+</ul>
+
+
+</html>
